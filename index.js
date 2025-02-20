@@ -9,7 +9,7 @@ const firmRoutes = require('./routes/firmroutes')
 const productroutes = require('./routes/productRoutes')
 const app = express()
 
-const PORT = 4000;
+const PORT = process.env.PORT || 4000;
 
 dotEnv.config()
 
@@ -25,7 +25,7 @@ app.use('/firm',firmRoutes);
 app.use('/product',productroutes);
 app.use('/uploads',express.static('uploads'));
 
-app.use('/home',(req, res)=>{
+app.use('/',(req, res)=>{
     res.send("welcome to swugy");
 })
 
