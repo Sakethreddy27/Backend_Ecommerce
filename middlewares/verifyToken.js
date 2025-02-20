@@ -6,10 +6,10 @@ const jwt = require('jsonwebtoken');
 
  dotEnv.config();
 
-
+ const secretKey = process.env.JWT_SECRET
 
 const verifyToken= async(req,res,next)=>{
-    const token = req.headers.token|| req.headers.authorization?.split(' ')[1];
+    const token = req.headers.token;
 
     if(!token){
 
@@ -37,4 +37,4 @@ const verifyToken= async(req,res,next)=>{
 
 }
 
-module.exports = verifyToken
+module.exports = verifyToken;
