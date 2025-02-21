@@ -15,8 +15,8 @@ dotEnv.config()
 
 mongoose.connect(process.env.MONGO_URI,{
     useNewUrlParser: true,
-    useUnifiedTopology: true,
-    serverSelectionTimeoutMS: 30000,  // Increase timeout to 30s
+    useUnifiedTopology: true
+           // Increase timeout to 30s
   })
 
 .then(()=>console.log("Mongodb connected sucessfully"))
