@@ -15,7 +15,7 @@ dotenv.config();
 // Debugging to check MONGO_URI
 console.log("MongoDB URI:", process.env.MONGO_URI);
 
-mongoose.connect(`${process.env.MONGO_URI}`)
+mongoose.connect(process.env.MONGO_URI)
 .then(() => {
     console.log("MongoDB connected successfully");
 })
