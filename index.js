@@ -12,10 +12,14 @@ const port = process.env.PORT || 5000;
 
 dotenv.config();
 
+const mongoURI = process.env.MONGO_URI;
+console.log("MongoDB URI type:", typeof mongoURI);
+console.log("First few chars:", mongoURI?.substring(0, 12));
+
 // Debugging to check MONGO_URI
 console.log("MongoDB URI:", process.env.MONGO_URI);
 
-mongoose.connect(process.env.MONGO_URI)
+mongoose.connect(mongoURI)
 .then(() => {
     console.log("MongoDB connected successfully");
 })
