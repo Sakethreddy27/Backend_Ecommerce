@@ -1,5 +1,5 @@
 const express = require("express");
-const dotEnv = require("dotenv");
+const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 const vendorRoutes = require("./routes/vendorRoutes");
 const bodyParser = require('body-parser');
@@ -10,12 +10,12 @@ const app = express();
 
 const port = process.env.PORT || 5000;
 
-dotEnv.config();
+dotenv.config();
 
 // Debugging to check MONGO_URI
 console.log("MongoDB URI:", process.env.MONGO_URI);
 
-mongoose.connect('mongodb+srv://sakethreddy:saketh123@cluster0.33mor.mongodb.net/Project1?retryWrites=true&w=majority&appName=Cluster0')
+mongoose.connect('process.env.MONGO_URI')
 .then(() => {
     console.log("MongoDB connected successfully");
 })
