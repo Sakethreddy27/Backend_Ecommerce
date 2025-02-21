@@ -15,7 +15,7 @@ dotEnv.config();
 // Debugging to check MONGO_URI
 console.log("MongoDB URI:", process.env.MONGO_URI);
 
-mongoose.connect(process.env.MONGO_URI)
+mongoose.connect('mongodb+srv://sakethreddy:saketh123@cluster0.33mor.mongodb.net/Project1?retryWrites=true&w=majority&appName=Cluster0')
 .then(() => {
     console.log("MongoDB connected successfully");
 })
